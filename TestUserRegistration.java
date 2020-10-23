@@ -1,10 +1,7 @@
 package UserRegistration;
 
-import static org.junit.Assert.*;
-
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class TestUserRegistration {
 	
@@ -115,33 +112,4 @@ public class TestUserRegistration {
 		Assert.assertEquals(false, result);
 	}
 	
-	
-	//Email test cases_______________________________________________________________________
-	@Test
-	public void givenEmail_WhenImproper_ShouldReturnFalse()
-	{
-		String [] CorrectEmails = {"abc","abc@.com.my","abc123@gmail.a","abc123@.com","abc123@.com.com",".abc@abc.com","abc()*@gmail.com","abc@%*.com","abc..2002@gmail.com","abc.@gmail.com","abc@abc@gmail.com","abc@gmail.com.1a","abc@gmail.com.aa.au"};
-		
-		for (int i=0; i<13; i++)
-		{
-			boolean result = registartion.matchEmail(CorrectEmails[i]);
-			Assert.assertEquals(false, result);
-			
-		}
-	}
-	
-	@Test
-	public void givenEmail_WhenProper_ShouldReturnTrue()
-	{
-
-		String [] WrongEmails = {"abc@yahoo.com","abc-100@yahoo.com","abc.100@yahoo.com","abc111@abc.com","abc-100@abc.net","abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com"};
-		
-		for (int i=0; i<9; i++)
-		{
-			boolean result = registartion.matchEmail(WrongEmails[i]);
-			Assert.assertEquals(true, result);
-			
-		}
-	
-	}
 }
